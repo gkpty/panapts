@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#bc6c25',
+            primaryLight: '#dda15e',
+            light: '#fefae0',
+            secondary: '#606c38',
+            secondaryDark: '#283618'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .md-36 {
+        font-size: 36px !important;
+    }
+    .section {
+        padding: 5% 8% 5% 8%;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+    <nav class="p-5 flex justify-between bg-primaryLight">
+        <div>
+            <h1>PanApts</h1>
+        </div>
+        <div class="flex space-x-4">
+            <a href="#projects">Proyectos</a>
+            <a href="#about">Nosotros</a>
+            <a href="#contact">Contactanos</a>
+        </div>
+    </nav>
+    <header class="bg-light flex justify-center h-80 content-center">
+        <div class="text-center py-20">
+            <h1 class="text-4xl font-bold pb-8">
+                Te conseguimos el apartamento de tus sueños al mejor precio
+            </h1>
+            <a href="#contact" class="rounded-full bg-secondary px-5 py-2 text-white">Contactanos</a>
+        </div>
+    </header>
+    <section class="grid grid-cols-4 gap-4 py-10">
+        <div class="block text-center">
+            <span class="material-icons-outlined md-36">apartment</span>
+            <h4>Los mejores proyectos</h4>
+        </div>
+        <div class="block text-center">
+            <span class="material-icons-outlined md-36">attach_money</span>
+            <h4>El mejor precio</h4>
+        </div>
+        <div class="block text-center">
+            <span class="material-icons-outlined md-36">support_agent</span>
+            <h4>Servicio impecable</h4>
+        </div>
+        <div class="block text-center">
+            <span class="material-icons-outlined md-36">task</span>
+            <h4>Papelo instantaneo</h4>
+        </div>
+    </section>
+    <section class="section bg-light">
+        <h2 class="text-center text-3xl pb-6">Invierte en Panama</h2>
+        <p>Panama es un excelente lugar para invertir porque usa el dolar. Es un centro financiero donde puedes tener acceso a capital en dolares. Al invertir en un apartamento mayor a 300mil dolares puedes obtener una residencia pemranente en panama que luego te permite  aplicar a aun pasaporte. Ademas puedes obtener una serie de beneficios siendo residnete de panama. Aparte de esto panama es un centro logistico con varias zonas economicas especiales, y cuenta con aranceles de importacion muy bajos en comparacion al resto de la region, lo cual hacen de panama un excelente centro para tener cualquier negocio que requiere de logistica importacion o exportacion.</p>
+    </section>
+    <section class="section">
+        <h2 class="text-center text-3xl pb-8">Nuestros proyectos mas cotizados</h2>
+        <div class="grid grid-cols-3 gap-4">
+            <div class="block text-center mx-auto">
+                <img src="images/wanders.jpg" width="250" heigth="370" alt="Yoo Panama by Phillip Stark">
+                <h3>Yoo Panama</h3>
+            </div>
+            <div class="block text-center mx-auto">
+                <img src="images/maison.jpg" width="250" heigth="370" alt="La Maison by Fendi Casa">
+                <h3>La Maison</h3>
+            </div>
+            <div class="block text-center mx-auto">
+                <img src="images/wanders.jpg" width="250" heigth="370" alt="Wanders & Yoo by Marcel Wanders">
+                <h3>Wanders & Yoo</h3>
+            </div>
+        </div>
+    </section>
+    <section class="section bg-light">
+        <h2 class="text-center text-3xl pb-8">Apartamentos listos para alquilar en airbnb</h2>
+        <p>Si buscas comprar un apartamento como inversion, para mudarte luego, o que vas a utilizar por parte del ano tenemos la solucion perfecta para ti. Te vendemos apartamentos amoblados por nuestras diversas casas de diseno, o te conectamos con los mejores disenadores de interiores de panama para cumplan y ejecuten la vision que tienens de tu apartamento. Te birndamos los servicios de property management y administramos tu propiedad de manera que tu no te tengas de preocupar de nada. En promedio con esta oiferta logramos retornos de 7% mensual o mas para todos nuestros clientes.</p>
+    </section>
+    <section class="section">
+        <h2 class="text-center text-3xl">Aceptamos pagos en criptomendas!</h2>
+        <div class="grid grid-cols-3 px-20 py-10 gap-4">
+            <div class="block text-center mx-auto">
+               <img src="icons/btc.svg" height="60" width="60" alt="bitcoin">
+            </div>
+            <div class="block text-center mx-auto">
+               <img src="icons/eth.svg" height="60" width="40" alt="etherem">
+            </div>
+            <div class="block text-center mx-auto">
+               <img src="icons/usdc.svg" height="60" width="60" alt="usd coin">
+            </div>
+        </div>
+        <p>Nosotros somos una compania de servicios y tecnologia y estamos a favor del avance tecnologico. Aceptamos pagos en cripto en cualquiera de las criptomonedas principales como bitcoin, ethereum o USDT/USDC.</p>
+    </section>
+    <section id="contact" class="section bg-secondary">
+        <div class="grid grid-cols-3">
+            <div>
+                <h4 class="text-2xl">PanApts</h4>
+                <h5 class="text-xl">Siguenos:</h5>
+                <div class="flex">
+                    <img src="icons/instagram.svg" width="25" heigth="25" alt="instagram">
+                    <img src="icons/facebook.svg" width="25" height="25" alt="facebook">
+                    <img src="icons/twitter.svg" width="25" height="25" alt="twitter">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <a href="tel:+50766776677">66776677</a>
+                    <a href="mailto:daltshoul@yahoo.com">daltshoul@yahoo.com</a>
+                </div>
+                <div>
+                    <p>Horarios</p>
+                    <p>Lunes - Viernes: 9am - 7pm</p>
+                    <p>Sábados: 9am - 5pm</p>
+                </div>
+            </div>
+            <div>
+                <iframe
+                    class="img-fluid pb-3"
+                    width="400"
+                    height="200"
+                    frameborder="0" style="border:0"
+                    src="https://maps.google.com/maps?q=1205+S+Dixie+Hwy+%23201,+Coral+Gables,+FL+33146,+USA=&output=embed" allowfullscreen>
+                </iframe> 
+            </div>
+        </div>
+    </section>
+    <footer class="p-5 bg-secondaryDark text-white">
+        <div class="flex justify-between">
+            <div>Copyright © 2022 PanApts</div>
+            <div>Powered by torus</div>
+        </div>
+    </footer>
+</body>
+</html>

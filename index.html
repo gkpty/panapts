@@ -34,6 +34,26 @@
         else element.classList.add('hidden')
     }
   </script>
+  <script>
+    window.addEventListener("load", (event) => {
+        const links = document.getElementsByClassName("smooth-scroll")
+
+        for (const link of links) {
+            link.addEventListener("click", clickHandler);
+        }
+
+        function clickHandler(e) {
+            e.preventDefault();
+            const href = this.getAttribute("href");
+            const offsetTop = document.querySelector(href).offsetTop;
+
+            scroll({
+                top: offsetTop,
+                behavior: "smooth"
+            });
+        }
+    })
+  </script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
 </head>
 <body>
@@ -49,13 +69,13 @@
         </div>
         <div id="small-menu" class="w-full block lg:flex lg:items-center lg:w-auto hidden">
           <div class="text-sm lg:flex-grow">
-            <a href="#projects" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            <a href="#projects" class="smooth-scroll block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
               Proyectos
             </a>
-            <a href="#about" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            <a href="#about" class="smooth-scroll block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
               Nosotros
             </a>
-            <a href="#contact" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
+            <a href="#contact" class="smooth-scroll block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
               Contactanos
             </a>
           </div>
@@ -91,7 +111,7 @@
         <h2 class="text-center text-3xl pb-6">Invierte en Panama</h2>
         <p>Panama es un excelente lugar para invertir porque usa el dolar. Es un centro financiero donde puedes tener acceso a capital en dolares. Al invertir en un apartamento mayor a 300mil dolares puedes obtener una residencia pemranente en panama que luego te permite  aplicar a aun pasaporte. Ademas puedes obtener una serie de beneficios siendo residnete de panama. Aparte de esto panama es un centro logistico con varias zonas economicas especiales, y cuenta con aranceles de importacion muy bajos en comparacion al resto de la region, lo cual hacen de panama un excelente centro para tener cualquier negocio que requiere de logistica importacion o exportacion.</p>
     </section>
-    <section class="section">
+    <section id="projects" class="section">
         <h2 class="text-center text-3xl pb-8">Nuestros proyectos mas cotizados</h2>
         <div class="grid grid-cols-3 gap-4">
             <div class="block text-center mx-auto">

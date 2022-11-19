@@ -27,18 +27,38 @@
         padding: 5% 8% 5% 8%;
     }
   </style>
+  <script>
+    function toggleHidden(id){
+        var element = document.getElementById(id)
+        if(element.classList.contains('hidden')) element.classList.remove('hidden')
+        else element.classList.add('hidden')
+    }
+  </script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
 </head>
 <body>
-    <nav class="p-5 flex justify-between bg-primaryLight">
-        <div class="flex gap-2">
+    <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+        <div class="flex items-center flex-shrink-0 text-white mr-6">
             <img src="assets/logo.svg" height="auto" width="35px">
             <h1 class="text-xl">PanApts</h1>
         </div>
-        <div class="flex space-x-4">
-            <a href="#projects">Proyectos</a>
-            <a href="#about">Nosotros</a>
-            <a href="#contact">Contactanos</a>
+        <div class="block lg:hidden">
+          <button onclick="toggleHidden('small-menu')" class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+          </button>
+        </div>
+        <div id="small-menu" class="w-full block lg:flex lg:items-center lg:w-auto hidden">
+          <div class="text-sm lg:flex-grow">
+            <a href="#projects" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+              Proyectos
+            </a>
+            <a href="#about" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+              Nosotros
+            </a>
+            <a href="#contact" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
+              Contactanos
+            </a>
+          </div>
         </div>
     </nav>
     <header class="bg-light flex justify-center h-80 content-center">

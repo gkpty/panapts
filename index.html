@@ -26,6 +26,19 @@
     .section {
         padding: 5% 8% 5% 8%;
     }
+    header {
+        background-image: url("images/header.jpg");
+        background-position: center;
+        background-repeat: no-repeat; 
+        background-size: cover;
+        height: 72vh;
+    }
+    .filter {
+        position: absolute;
+        height: 72vh;
+        width: 100%;
+        background-color: hsl(0, 100%, 100%, .3);
+    }
   </style>
   <script>
     function toggleHidden(id){
@@ -45,7 +58,7 @@
         function clickHandler(e) {
             e.preventDefault();
             const href = this.getAttribute("href");
-            const offsetTop = document.querySelector(href).offsetTop;
+            const offsetTop = document.querySelector(href).offsetTop - 65;
 
             scroll({
                 top: offsetTop,
@@ -57,11 +70,13 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
 </head>
 <body>
-    <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-        <div class="flex items-center flex-shrink-0 text-white mr-6">
-            <img src="assets/logo.svg" height="auto" width="35px">
-            <h1 class="text-xl">PanApts</h1>
-        </div>
+    <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6 fixed top-0 z-20 w-full">
+        <a href="#home" class="smooth-scroll">
+            <div class="flex items-center flex-shrink-0 text-white mr-6">
+                <img src="assets/logo.svg" height="auto" width="35px">
+                <h1 class="text-xl">PanApts</h1>
+            </div>
+        </a>
         <div class="block lg:hidden">
           <button onclick="toggleHidden('small-menu')" class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
             <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
@@ -81,12 +96,13 @@
           </div>
         </div>
     </nav>
-    <header class="bg-light flex justify-center h-80 content-center">
-        <div class="text-center py-20">
-            <h1 class="text-4xl font-bold pb-8">
+    <header id="home" class="bg-light flex justify-center content-center">
+        <div class="filter"></div>
+        <div class="text-center absolute top-1/4 z-10 px-8">
+            <h1 class="text-3xl lg:text-5xl pb-10 lg:pb-16">
                 Te conseguimos el apartamento de tus sueños al mejor precio
             </h1>
-            <a href="#contact" class="rounded-full bg-secondary px-5 py-2 text-white">Contactanos</a>
+            <a href="#contact" class="rounded-full bg-secondary px-5 py-2 text-white lg:text-3xl smooth-scroll">Contactanos</a>
         </div>
     </header>
     <section class="grid grid-cols-4 gap-4 py-10">

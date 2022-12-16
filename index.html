@@ -12,6 +12,7 @@
             primary: '#bc6c25',
             primaryLight: '#dda15e',
             light: '#fefae0',
+            grayish: 'hsl(0, 0%, 72%, .7)',
             secondary: '#606c38',
             secondaryDark: '#283618'
           }
@@ -20,7 +21,7 @@
     }
   </script>
   <style>
-    body {
+    html,body {
         width: 100%;
         min-height: 100vh;
         overflow-x: hidden;
@@ -75,7 +76,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
 </head>
 <body>
-    <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6 fixed top-0 z-20 w-full">
+    <nav class="flex items-center justify-between flex-wrap bg-grayish p-6 fixed top-0 z-20 w-full">
         <a href="#home" class="smooth-scroll">
             <div class="flex items-center flex-shrink-0 text-white mr-6">
                 <img src="assets/logo.svg" height="auto" width="35px">
@@ -169,7 +170,7 @@
         <p>Nosotros somos una compania de servicios y tecnologia y estamos a favor del avance tecnologico. Aceptamos pagos en cripto en cualquiera de las criptomonedas principales como bitcoin, ethereum o USDT/USDC.</p>
     </section>
     <section id="contact" class="section bg-secondary">
-        <div class="grid grid-cols-2 lg:grid-cols-3">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3">
             <div>
                 <h4 class="text-2xl">PanApts</h4>
                 <h5 class="text-xl">Siguenos:</h5>
@@ -193,7 +194,7 @@
             <div class="w-100 pt-5 lg:pt-0">
                 <iframe
                     class="img-fluid pb-3"
-                    width="400"
+                    width="300"
                     height="200"
                     frameborder="0" style="border:0"
                     src="https://maps.google.com/maps?q=1205+S+Dixie+Hwy+%23201,+Coral+Gables,+FL+33146,+USA=&output=embed">

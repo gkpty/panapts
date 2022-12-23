@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -14,17 +15,29 @@
             light: '#fefae0',
             grayish: 'hsl(0, 0%, 72%, .7)',
             secondary: '#606c38',
-            secondaryDark: '#283618'
+            secondaryDark: '#283618',
+            pale: 'rgba(88, 100, 255, .1)'
           }
         }
       }
     }
   </script>
-  <style>
+  <style >
+    @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Open+Sans&display=swap');
     html,body {
         width: 100%;
         min-height: 100vh;
         overflow-x: hidden;
+        font-family:
+            system-ui,
+            -apple-system, /* Firefox supports this but not yet `system-ui` */
+            'Segoe UI',
+            Roboto,
+            Helvetica,
+            Arial,
+            sans-serif,
+            'Apple Color Emoji',
+            'Segoe UI Emoji';
     }
     .md-36 {
         font-size: 36px !important;
@@ -44,6 +57,109 @@
         height: 72vh;
         width: 100%;
         background-color: hsl(0, 100%, 100%, .3);
+    }
+    h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{
+        font-weight: 700 !important;
+        margin: 0px;
+        --tw-text-opacity: 1;
+        color: rgba(22, 36, 71, var(--tw-text-opacity));
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    h1 a,
+    h2 a,
+    h3 a,
+    h4 a,
+    h5 a,
+    h6 a{
+        font-family: 'Arimo', sans-serif !important;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    h2 {
+        font-size: 30px !important;
+    }
+
+    h3 {
+        font-size: 25px !important;
+    }
+
+    h4 {
+        font-size: 20px !important;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    h6 {
+        font-size: 16px;
+    }
+
+    .container{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    }
+
+    @media (min-width: 540px){
+    .container{
+        max-width: 540px;
+    }
+    }
+
+    @media (min-width: 720px){
+    .container{
+        max-width: 720px;
+    }
+    }
+
+    @media (min-width: 960px){
+    .container{
+        max-width: 960px;
+    }
+    }
+
+    @media (min-width: 1140px){
+    .container{
+        max-width: 1140px;
+    }
+    }
+
+    @media (min-width: 1320px){
+    .container{
+        max-width: 1320px;
+    }
+    }
+
+    .feature-icon {
+        --tw-bg-opacity: 1;
+        background-color: rgba(88, 100, 255, var(--tw-bg-opacity));
+        --tw-bg-opacity: 0.1;
+        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 130px;
+        line-height: 1;
+        margin: auto;
+        margin-bottom: 32px;
+        --tw-text-opacity: 1;
+        color: rgba(88, 100, 255, var(--tw-text-opacity));
+        width: 130px;
+        font-size: 65px;
+    }
+    .invest-icon{
+        height: 58px;
+        width: auto
     }
   </style>
   <script>
@@ -111,45 +227,72 @@
             <a href="#contact" class="rounded-full bg-secondary px-5 py-2 text-white lg:text-3xl smooth-scroll">Contactanos</a>
         </div>
     </header>
-    <section class="grid grid-cols-4 gap-4 py-10">
-        <div class="block text-center">
-            <span class="material-icons-outlined md-36">apartment</span>
-            <h4>Los mejores proyectos</h4>
-        </div>
-        <div class="block text-center">
-            <span class="material-icons-outlined md-36">attach_money</span>
-            <h4>El mejor precio</h4>
-        </div>
-        <div class="block text-center">
-            <span class="material-icons-outlined md-36">support_agent</span>
-            <h4>Servicio impecable</h4>
-        </div>
-        <div class="block text-center">
-            <span class="material-icons-outlined md-36">task</span>
-            <h4>Papelo instantaneo</h4>
+ 
+    <section id="value-propositions" class="px-10 py-20 lg:px-24">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="block text-center">
+                <div class="feature-icon">
+                    <img src="icons/value-propositions/projects.svg" alt="" height="42px" width="42px">
+                </div>
+                <h4>Los mejores proyectos</h4>
+            </div>
+            <div class="block text-center">
+                <div class="feature-icon">
+                    <img src="icons/value-propositions/prices.svg" alt="" height="42px" width="42px">
+                </div>
+                <h4>El mejor precio</h4>
+            </div>
+            <div class="block text-center">
+                <div class="feature-icon">
+                    <img src="icons/value-propositions/service.svg" alt="" height="42px" width="42px">
+                </div>
+                <h4>Servicio impecable</h4>
+            </div>
+            <div class="block text-center">
+                <div class="feature-icon">
+                    <img src="icons/value-propositions/paperwork.svg" alt="" height="42px" width="42px">
+                </div>
+                <h4>Papelo instantaneo</h4>
+            </div>
         </div>
     </section>
-    <section class="section bg-light">
-        <h2 class="text-center text-3xl pb-6">¿Por qué invertir en Panamá?</h2>
-        <p>
-            <span class="font-bold">Logística: </span>
-            <span>Panamá es una de las rutas de envío más importantes del mundo. Cada año, más de 14.000 buques pasan por el Canal, lo que lo convierte en un centro clave para el comercio internacional. Las empresas ubicadas cerca del Canal pueden aprovechar esta ruta de comercio para mover productos rápida y eficientemente.</span>
-        </p>
-        <p>
-            <span class="font-bold">Política: </span>
-            <span>Panamá cuenta con un ambiente político y económico estable. El gobierno se compromete a promover el crecimiento económico y atraer inversión extranjera. Panamá también es miembro de la Organización Mundial del Comercio, lo que le brinda acceso a los mercados globales.</span>
-        </p>
-        <p>
-            <span class="font-bold">Impuestos: </span>
-            <span>Panamá ofrece una variedad de incentivos fiscales para las empresas. Estos incentivos incluyen una zona económica especial para empresas, un permiso fiscal para nuevas empresas y una tasa reducida de impuestos corporativos. Estos incentivos hacen de Panamá un destino atractivo para las empresas.</span>
-        </p>
-        <p>
-            <span class="font-bold">Estilo de vida: </span>
-            <span>la ciudad de Panamá cuenta con un hermoso skyline similar al de Miami, con modernos rascacielos. La ciudad está llena de tiendas, restaurantes y está organizada de manera que es fácil viajar. También se encuentran en marcha diversos proyectos públicos para expandir y mejorar la infraestructura de las ciudades.</span>
-        </p>
+
+    <section id="invest" class="px-10 py-20 lg:px-24 bg-pale">
+        <h2 class="text-center pb-14">¿Por qué invertir en Panamá?</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div class="block">
+                <div class="leading-none">
+                    <img class="invest-icon" src="icons/invest/logistics.svg" alt="" height="60px" width="60px">
+                </div>
+                <h3 class="py-5">Logística</h3>
+                <p class="text-lg text-left">Panamá es una de las rutas de envío más importantes del mundo. Cada año, más de 14.000 buques pasan por el Canal, lo que lo convierte en un centro clave para el comercio internacional. Las empresas ubicadas cerca del Canal pueden aprovechar esta ruta de comercio para mover productos rápida y eficientemente.</p>
+            </div>
+            <div class="block">
+                <div class="leading-none">
+                    <img class="invest-icon" src="icons/invest/politics.svg" alt="" height="60px" width="60px">
+                </div>
+                <h3 class="py-5">Política</h3>
+                <p class="text-lg text-left">Panamá cuenta con un ambiente político y económico estable. El gobierno se compromete a promover el crecimiento económico y atraer inversión extranjera. Panamá también es miembro de la Organización Mundial del Comercio, lo que le brinda acceso a los mercados globales.</p>
+            </div>
+            <div class="block">
+                <div class="leading-none">
+                    <img class="invest-icon" src="icons/invest/taxes.svg" alt="" height="60px" width="60px">
+                </div>
+                <h3 class="py-5">Impuestos</h3>
+                <p class="text-lg text-left">Panamá ofrece una variedad de incentivos fiscales para las empresas. Estos incentivos incluyen una zona económica especial para empresas, un permiso fiscal para nuevas empresas y una tasa reducida de impuestos corporativos. Estos incentivos hacen de Panamá un destino atractivo para las empresas.</p>
+            </div>
+            <div class="block">
+                <div class="leading-none">
+                    <img class="invest-icon" src="icons/invest/economy.svg" alt="" height="60px" width="60px">
+                </div>
+                <h3 class="py-5">Economia</h3>
+                <p class="text-lg text-left">Panamá ha tenido un crecimiento económico positivo durante muchos años, y su economía es ahora una de las más diversificadas y dolarizadas de América Latina. El país tiene un sector de servicios fuerte, que representa más del 75 por ciento del PIB, y un sector de construcción en auge. El turismo también es una parte importante de la economía, y Panamá es ahora el segundo destino más popular en Centroamérica.</p>
+            </div>
+        </div>
     </section>
-    <section id="projects" class="section">
-        <h2 class="text-center text-3xl pb-8">Nuestros proyectos mas cotizados</h2>
+
+    <section id="projects" class="px-10 py-20 lg:px-24">
+        <h2 class="text-center pb-14">Nuestros proyectos mas cotizados</h2>
         <div class="grid grid-cols-3 gap-4">
             <div class="block text-center mx-auto">
                 <img src="images/wanders.jpg" width="250" heigth="370" alt="Yoo Panama by Phillip Stark">
@@ -169,32 +312,46 @@
             </div>
         </div>
     </section>
-    <section class="section bg-light">
-        <h2 class="text-center text-3xl pb-8">Apartamentos listos para alquilar en airbnb</h2>
-        <p>Si buscas comprar un apartamento como inversion, para mudarte luego, o para utilizarlo por parte del año, tenemos la solucion perfecta para ti. Nuestros apartamentos llave en mano para alquilar en Airbnb te proporcionan un retorno garantizado del 7% sobre la inversión, de esta forma usted puede estar seguro de que su inversion va a rendir como esperaba. Y, con nuestro equipo experimentado y profesional que administra la propiedad, usted puede enfocarse en disfrutar de sus ganancias, sin estrés.</p>
-        <p>Nos encargamos de todo, desde el listado de la propiedad y la gestión de la comunicación con los huéspedes, hasta el limpieza y mantenimiento del espacio. Puede ser tan poco involucrado o involucrado como desee, estamos aquí para personalizar la experiencia a sus necesidades.</p>
-    </section>
-    <section class="section">
-        <h2 class="text-center text-3xl">Aceptamos pagos en criptomendas!</h2>
-        <div class="grid grid-cols-3 px-20 py-10 gap-4">
-            <div class="block text-center mx-auto">
-               <img src="icons/btc.svg" height="60" width="60" alt="bitcoin">
+
+    <section id="airbnb-ready" class="px-10 py-20 lg:px-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div class="lg:order-2">
+                <h2 class="pb-10">Apartamentos listos para alquilar en airbnb</h2>
+                <p>Si buscas comprar un apartamento como inversion, para mudarte luego, o para utilizarlo por parte del año, tenemos la solucion perfecta para ti. Nuestros apartamentos llave en mano para alquilar en Airbnb te proporcionan un retorno garantizado del 7% sobre la inversión, de esta forma usted puede estar seguro de que su inversion va a rendir como esperaba. Y, con nuestro equipo experimentado y profesional que administra la propiedad, usted puede enfocarse en disfrutar de sus ganancias, sin estrés. Nosotros nos encargamos de todo, desde el listado de la propiedad y la gestión de la comunicación con los huéspedes, hasta el limpieza y mantenimiento del espacio. La experiencia puede ser tan poco involucrado o involucrado como tu desees.</p>
             </div>
-            <div class="block text-center mx-auto">
-               <img src="icons/eth.svg" height="60" width="40" alt="etherem">
-            </div>
-            <div class="block text-center mx-auto">
-               <img src="icons/usdc.svg" height="60" width="60" alt="usd coin">
+            <div class="lg:order-1 px-8">
+                <img src="images/airbnb.png" alt="">
             </div>
         </div>
-        <p>Somos una empresa moderna que utiliza la tecnología para mejorar la experiencia de nuestros clientes. La criptomoneda es una de esas tecnologías que pueden facilitar transacciones transfronterizas rápidas, seguras y económicas para nuestros clientes. Es por eso que nos hemos asociado con una de las principales plataformas de cambio de criptomonedas para aceptar pagos en Bitcoin, Ethereum y USD Coin para apartamentos. Creemos que esto facilitará los pagos para nuestros clientes internacionales y también eliminará la necesidad de comisiones por conversión de moneda</p>
     </section>
+
+    <section id="crypto" class="px-10 py-20 lg:px-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div>
+                <h2 class="pb-10">Aceptamos pagos en criptomendas</h2>
+                <p>Somos una empresa moderna que utiliza la tecnología para mejorar la experiencia de nuestros clientes. La criptomoneda es una de esas tecnologías que pueden facilitar transacciones transfronterizas rápidas, seguras y económicas para nuestros clientes. Es por eso que nos hemos asociado con una de las principales plataformas de cambio de criptomonedas para aceptar pagos en Bitcoin, Ethereum y USD Coin para apartamentos. Creemos que esto facilitará los pagos para nuestros clientes internacionales y también eliminará la necesidad de comisiones por conversión de moneda</p>
+            </div>
+            <div class="px-8">
+                <img src="images/crypto.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    
     <section class="section bg-light">
-        <h2 class="text-center text-3xl pb-8">Sobre nosotros</h2>
-        <p>Somos una empresa inmobiliaria que se especializa en la venta de apartamentos de lujo en Panamá.</p>
+        <h2 class="text-center text-3xl pb-8">Nos especializamos en la gestión y venta de apartamentos de lujo en Panamá</h2>
         <p>Ofrecemos a nuestros clientes un servicio de alta calidad y nos esforzamos por mantener un estándar de excelencia en todos los aspectos de nuestro negocio.</p>
-        <p>Nuestro equipo de jóvenes agentes de bienes raíces profesionales está comprometido a brindarle el mejor servicio posible. Nos esforzamos por mantener un alto nivel de integridad y ética en todo lo que hacemos, y siempre estamos buscando la manera de mejorar nuestros servicios. Nos especializamos en la venta de propiedades en el área de la ciudad de Panama, y estamos seguros de que podemos ayudarle a encontrar la propiedad perfecta para sus necesidades.</p>
+        <p>Nuestro equipo de agentes de bienes y raíces profesionales está comprometido a brindarle el mejor servicio posible. Nos esforzamos por mantener un alto nivel de integridad y ética en todo lo que hacemos, y siempre estamos buscando la manera de mejorar nuestros servicios. Nos especializamos en la venta de propiedades en el área de la ciudad de Panama, y estamos seguros de que podemos ayudarle a encontrar la propiedad perfecta para sus necesidades.</p>
     </section>
+
+    <section class="section">
+        <h2 class="text-center text-3xl pb-8">Lifestyle en panama</h2>
+        <p>Panamá es un país con una rica cultura y un estilo de vida diverso. La gente de Panamá es conocida por su amable y acogedora naturaleza, y el país tiene una gran variedad de actividades y atracciones para ofrecer a los visitantes. Desde la ajetreada vida en la ciudad de Panamá hasta las tranquilas ciudades de playa, hay algo para todos en Panamá.</p>
+        <p>El clima en Panamá es tropical, y el país experimenta dos estaciones principales: la estación seca y la estación lluviosa. La estación seca va de diciembre a abril, y la estación lluviosa de mayo a noviembre.</p>
+        <p>Panamá es un país seguro y estable, y el gobierno panameño se compromete a proporcionar un alto nivel de vida a sus ciudadanos. El país tiene una economía fuerte y es una de las economías de América Latina que más rápido está creciendo.</p>
+        <p>Panamá es un excelente lugar para vivir, trabajar y criar una familia. El costo de la vida es relativamente bajo, y hay muchas oportunidades de empleo y negocios. El país también tiene un buen sistema educativo, y la atención médica está fácilmente disponible.</p>
+    </section>
+    
     <section id="contact" class="section bg-secondary">
         <div class="grid sm:grid-cols-2 lg:grid-cols-3">
             <div>

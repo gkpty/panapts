@@ -1,159 +1,140 @@
 <!doctype html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#bc6c25',
-            primaryLight: '#dda15e',
-            light: '#fefae0',
-            grayish: 'hsl(0, 0%, 72%, .7)',
-            secondary: '#606c38',
-            secondaryDark: '#283618'
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    html,body {
-        width: 100%;
-        min-height: 100vh;
-        overflow-x: hidden;
-    }
-    .md-36 {
-        font-size: 36px !important;
-    }
-    .section {
-        padding: 5% 8% 5% 8%;
-    }
-    header {
-        background-image: url("images/header.jpg");
-        background-position: center;
-        background-repeat: no-repeat; 
-        background-size: cover;
-        height: 72vh;
-    }
-    .filter {
-        position: absolute;
-        height: 72vh;
-        width: 100%;
-        background-color: hsl(0, 100%, 100%, .3);
-    }
-  </style>
-  <script>
-    function toggleHidden(id){
-        var element = document.getElementById(id)
-        if(element.classList.contains('hidden')) element.classList.remove('hidden')
-        else element.classList.add('hidden')
-    }
-  </script>
-  <script>
-    window.addEventListener("load", (event) => {
-        const links = document.getElementsByClassName("smooth-scroll")
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>PanAparts | apartamentos de lujo en la Ciudad de Panamá</title>
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/LineIcons.css">
+    <link rel="stylesheet" href="assets/css/tailwind.css">
 
-        for (const link of links) {
-            link.addEventListener("click", clickHandler);
-        }
 
-        function clickHandler(e) {
-            e.preventDefault();
-            const href = this.getAttribute("href");
-            const offsetTop = document.querySelector(href).offsetTop - 65;
-
-            scroll({
-                top: offsetTop,
-                behavior: "smooth"
-            });
-        }
-    })
-  </script>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
 </head>
+
 <body>
-    <nav class="flex items-center justify-between flex-wrap bg-grayish p-6 fixed top-0 z-20 w-full">
+
+    <nav id="mainNav" class="flex items-center justify-between flex-wrap bg-grayish p-6 fixed top-0 z-20 w-full">
         <a href="#home" class="smooth-scroll">
-            <div class="flex items-center flex-shrink-0 text-white mr-6">
+            <div class="flex items-center flex-shrink-0 mr-6">
                 <img src="assets/logo.svg" height="auto" width="35px">
-                <h1 class="text-xl">PanApts</h1>
+                <h1 class="text-xl pl-3">PanAparts</h1>
             </div>
         </a>
         <div class="block lg:hidden">
-          <button onclick="toggleHidden('small-menu')" class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+          <button onclick="toggleHidden('small-menu')" class="flex items-center px-3 py-2">
+            <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
           </button>
         </div>
         <div id="small-menu" class="w-full block lg:flex lg:items-center lg:w-auto hidden">
           <div class="text-sm lg:flex-grow">
-            <a href="#projects" class="smooth-scroll block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            <a href="#projects" class="smooth-scroll block mt-4 lg:inline-block lg:mt-0 mr-4">
               Proyectos
             </a>
-            <a href="#about" class="smooth-scroll block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            <a href="#about" class="smooth-scroll block mt-4 lg:inline-block lg:mt-0 mr-4">
               Nosotros
             </a>
-            <a href="#contact" class="smooth-scroll block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
+            <a href="#contact" class="smooth-scroll block mt-4 lg:inline-block lg:mt-0">
               Contactanos
             </a>
           </div>
         </div>
+        <div class="items-center justify-end hidden navbar-social lg:flex">
+            <span class="mr-4 font-bold text-gray-900 uppercase">Siguenos</span>
+            <ul class="flex footer-social">
+                <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
+                <li><a href="#"><i class="lni-twitter-original"></i></a></li>
+                <li><a href="#"><i class="lni-instagram-original"></i></a></li>
+                <li><a href="#"><i class="lni-linkedin-original"></i></a></li>                                  
+            </ul>
+        </div>
     </nav>
-    <header id="home" class="bg-light flex justify-center content-center">
-        <div class="filter"></div>
-        <div class="text-center absolute top-1/4 z-10 px-8">
-            <h1 class="text-3xl lg:px-20 lg:text-4xl pb-10 lg:pb-16">
-                Te conseguimos el apartamento de tus sueños al mejor precio
-            </h1>
-            <a href="#contact" class="rounded-full bg-secondary px-5 py-2 text-white lg:text-3xl smooth-scroll">Contactanos</a>
-        </div>
+
+
+    <header class="header-area">
+
+        <div id="home" class="relative z-10 header-hero" style="background-size: cover; background-image: url(assets/images/header-bg.jpg)">
+            <div class="container">
+                <div class="justify-center row">
+                    <div class="w-full lg:w-5/6 xl:w-2/3">
+                        <div class="pt-48 pb-64 text-center header-content">
+                            <h3 class="mb-8 text-3xl font-semibold leading-tight text-gray-900 md:text-5xl">Especialistas en apartamentos de lujo en la Ciudad de Panamá</h3>
+                            <div class="flex flex-wrap justify-center">
+                                <a class="mx-3 main-btn gradient-btn" href="javascript:void(0)">CONTÁCTANOS</a>
+                            </div>
+                        </div> <!-- header content -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+            <div class="absolute bottom-0 z-20 w-full h-auto -mb-1 header-shape">
+                <img src="assets/images/header-shape.svg" alt="shape">
+            </div>
+        </div> <!-- header content -->
     </header>
-    <section class="grid grid-cols-4 gap-4 py-10">
-        <div class="block text-center">
-            <span class="material-icons-outlined md-36">apartment</span>
-            <h4>Los mejores proyectos</h4>
-        </div>
-        <div class="block text-center">
-            <span class="material-icons-outlined md-36">attach_money</span>
-            <h4>El mejor precio</h4>
-        </div>
-        <div class="block text-center">
-            <span class="material-icons-outlined md-36">support_agent</span>
-            <h4>Servicio impecable</h4>
-        </div>
-        <div class="block text-center">
-            <span class="material-icons-outlined md-36">task</span>
-            <h4>Papelo instantaneo</h4>
+
+    
+    <section id="value-propositions" class="px-10 py-20 lg:px-24">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="block text-center">
+                <div class="feature-icon bg-gray-100">
+                    <img src="icons/value-propositions/projects.svg" alt="" height="42px" width="42px">
+                </div>
+                <h4>Los mejores proyectos</h4>
+            </div>
+            <div class="block text-center">
+                <div class="feature-icon bg-gray-100">
+                    <img src="icons/value-propositions/prices.svg" alt="" height="42px" width="42px">
+                </div>
+                <h4>El mejor precio</h4>
+            </div>
+            <div class="block text-center">
+                <div class="feature-icon bg-gray-100">
+                    <img src="icons/value-propositions/service.svg" alt="" height="42px" width="42px">
+                </div>
+                <h4>Servicio impecable</h4>
+            </div>
+            <div class="block text-center">
+                <div class="feature-icon bg-gray-100">
+                    <img src="icons/value-propositions/paperwork.svg" alt="" height="42px" width="42px">
+                </div>
+                <h4>Papelo instantaneo</h4>
+            </div>
         </div>
     </section>
-    <section class="section bg-light">
-        <h2 class="text-center text-3xl pb-6">¿Por qué invertir en Panamá?</h2>
-        <p>
-            <span class="font-bold">Logística: </span>
-            <span>Panamá es una de las rutas de envío más importantes del mundo. Cada año, más de 14.000 buques pasan por el Canal, lo que lo convierte en un centro clave para el comercio internacional. Las empresas ubicadas cerca del Canal pueden aprovechar esta ruta de comercio para mover productos rápida y eficientemente.</span>
-        </p>
-        <p>
-            <span class="font-bold">Política: </span>
-            <span>Panamá cuenta con un ambiente político y económico estable. El gobierno se compromete a promover el crecimiento económico y atraer inversión extranjera. Panamá también es miembro de la Organización Mundial del Comercio, lo que le brinda acceso a los mercados globales.</span>
-        </p>
-        <p>
-            <span class="font-bold">Impuestos: </span>
-            <span>Panamá ofrece una variedad de incentivos fiscales para las empresas. Estos incentivos incluyen una zona económica especial para empresas, un permiso fiscal para nuevas empresas y una tasa reducida de impuestos corporativos. Estos incentivos hacen de Panamá un destino atractivo para las empresas.</span>
-        </p>
-        <p>
-            <span class="font-bold">Estilo de vida: </span>
-            <span>la ciudad de Panamá cuenta con un hermoso skyline similar al de Miami, con modernos rascacielos. La ciudad está llena de tiendas, restaurantes y está organizada de manera que es fácil viajar. También se encuentran en marcha diversos proyectos públicos para expandir y mejorar la infraestructura de las ciudades.</span>
-        </p>
+
+    <section id="about" class="px-10 py-20 section lg:px-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div class="lg:order-2">
+                <h5 class="text-2xl pt-14">Somos una empresa inmobiliaria de servicio completo especializados en ayudar a nuestros clientes a encontrar su hogar perfecto en la Ciudad de Panamá. Tenemos un equipo de agentes inmobiliarios experimentados que conocen el mercado local a fondo y te ayudán a conseguir el mejor precio.</h5>
+            </div>
+            <div class="lg:order-1 px-10">
+                <img src="images/about.png" alt="">
+            </div>
+        </div>
     </section>
-    <section id="projects" class="section">
-        <h2 class="text-center text-3xl pb-8">Nuestros proyectos mas cotizados</h2>
-        <div class="grid grid-cols-3 gap-4">
+
+    <section id="airbnb-ready" class="px-10 py-20 section lg:px-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div>
+                <h2 class="pb-10">Apartamentos listos para alquilar en airbnb</h2>
+                <p>Si buscas comprar un apartamento como inversion, para mudarte luego, o para utilizarlo por parte del año, tenemos la solucion perfecta para ti. Nuestros apartamentos llave en mano para alquilar en Airbnb te proporcionan un retorno garantizado del 7% sobre la inversión, de esta forma usted puede estar seguro de que su inversion va a rendir como esperaba. Y, con nuestro equipo experimentado y profesional que administra la propiedad, usted puede enfocarse en disfrutar de sus ganancias, sin estrés. Nosotros nos encargamos de todo, desde el listado de la propiedad y la gestión de la comunicación con los huéspedes, hasta el limpieza y mantenimiento del espacio. La experiencia puede ser tan poco involucrado o involucrado como tu desees.</p>
+            </div>
+            <div class="px-10">
+                <img src="images/airbnb.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="px-10 py-20 lg:px-24">
+        <h2 class="text-center pb-14">Nuestros proyectos mas cotizados</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
             <div class="block text-center mx-auto">
-                <img src="images/wanders.jpg" width="250" heigth="370" alt="Yoo Panama by Phillip Stark">
-                <h3>Yoo Panama</h3>
+                <a href="projects/yoo.html">
+                    <img src="images/wanders.jpg" width="250" heigth="370" alt="Yoo Panama by Phillip Stark">
+                    <h3>Yoo Panama</h3>
+                </a>
             </div>
             <div class="block text-center mx-auto">
                 <a href="projects/maison.html">
@@ -162,77 +143,191 @@
                 </a>
             </div>
             <div class="block text-center mx-auto">
+                <a href="projects/wanders.html">
+                    <img src="images/wanders.jpg" width="250" heigth="370" alt="Wanders & Yoo by Marcel Wanders">
+                    <h3>Wanders & Yoo</h3>
+                </a>
+            </div>
+        </div>
+    </section>
 
-                <img src="images/wanders.jpg" width="250" heigth="370" alt="Wanders & Yoo by Marcel Wanders">
-                <h3>Wanders & Yoo</h3>
-            
+    <section id="invest" class="px-10 py-20 lg:px-24 bg-gray-100">
+        <h2 class="text-center pb-14">¿Por qué invertir en Panamá?</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div class="block">
+                <div class="leading-none">
+                    <img class="invest-icon" src="icons/invest/logistics.svg" alt="" height="60px" width="60px">
+                </div>
+                <h3 class="py-5">Logística</h3>
+                <p class="text-lg text-left">Panamá es una de las rutas de envío más importantes del mundo. Cada año, más de 14.000 buques pasan por el Canal, lo que lo convierte en un centro clave para el comercio internacional. Las empresas ubicadas cerca del Canal pueden aprovechar esta ruta de comercio para mover productos rápida y eficientemente.</p>
+            </div>
+            <div class="block">
+                <div class="leading-none">
+                    <img class="invest-icon" src="icons/invest/politics.svg" alt="" height="60px" width="60px">
+                </div>
+                <h3 class="py-5">Política</h3>
+                <p class="text-lg text-left">Panamá cuenta con un ambiente político y económico estable. El gobierno se compromete a promover el crecimiento económico y atraer inversión extranjera. Panamá también es miembro de la Organización Mundial del Comercio, lo que le brinda acceso a los mercados globales.</p>
+            </div>
+            <div class="block">
+                <div class="leading-none">
+                    <img class="invest-icon" src="icons/invest/taxes.svg" alt="" height="60px" width="60px">
+                </div>
+                <h3 class="py-5">Impuestos</h3>
+                <p class="text-lg text-left">Panamá ofrece una variedad de incentivos fiscales para las empresas. Estos incentivos incluyen una zona económica especial para empresas, un permiso fiscal para nuevas empresas y una tasa reducida de impuestos corporativos. Estos incentivos hacen de Panamá un destino atractivo para las empresas.</p>
+            </div>
+            <div class="block">
+                <div class="leading-none">
+                    <img class="invest-icon" src="icons/invest/economy.svg" alt="" height="60px" width="60px">
+                </div>
+                <h3 class="py-5">Economia</h3>
+                <p class="text-lg text-left">Panamá ha tenido un crecimiento económico positivo durante muchos años, y su economía es ahora una de las más diversificadas y dolarizadas de América Latina. El país tiene un sector de servicios fuerte, que representa más del 75 por ciento del PIB, y un sector de construcción en auge. El turismo también es una parte importante de la economía, y Panamá es ahora el segundo destino más popular en Centroamérica.</p>
             </div>
         </div>
     </section>
-    <section class="section bg-light">
-        <h2 class="text-center text-3xl pb-8">Apartamentos listos para alquilar en airbnb</h2>
-        <p>Si buscas comprar un apartamento como inversion, para mudarte luego, o para utilizarlo por parte del año, tenemos la solucion perfecta para ti. Nuestros apartamentos llave en mano para alquilar en Airbnb te proporcionan un retorno garantizado del 7% sobre la inversión, de esta forma usted puede estar seguro de que su inversion va a rendir como esperaba. Y, con nuestro equipo experimentado y profesional que administra la propiedad, usted puede enfocarse en disfrutar de sus ganancias, sin estrés.</p>
-        <p>Nos encargamos de todo, desde el listado de la propiedad y la gestión de la comunicación con los huéspedes, hasta el limpieza y mantenimiento del espacio. Puede ser tan poco involucrado o involucrado como desee, estamos aquí para personalizar la experiencia a sus necesidades.</p>
-    </section>
-    <section class="section">
-        <h2 class="text-center text-3xl">Aceptamos pagos en criptomendas!</h2>
-        <div class="grid grid-cols-3 px-20 py-10 gap-4">
-            <div class="block text-center mx-auto">
-               <img src="icons/btc.svg" height="60" width="60" alt="bitcoin">
+
+    <section id="about" class="px-10 py-20 section lg:px-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div class="lg:order-2">
+                <h2 class="pb-10">Estilo de vida en Panamá</h2>
+               <p>El estilo de vida en la Ciudad de Panamá es muy tranquila y despreocupada. A pesar de ser una gran metrópolis, Ciudad de Panamá tiene un ambiente de ciudad pequeña y sus residentes son conocidos por su actitud tranquila. La ciudad también es increíblemente segura, lo que la convierte en un excelente lugar para vivir tanto para familias como para viajeros. El clima es tropical, lo que significa que hay muchas actividades al aire libre para disfrutar durante todo el año. La vida nocturna es activa y hay muchos restaurantes y bares para elegir. El gran aeropuerto internacional de Panamá ofrece vuelos directos a la mayoría de las principales ciudades del mundo, lo que también lo convierte en una excelente opción para las personas que viajan con frecuencia.</p>
             </div>
-            <div class="block text-center mx-auto">
-               <img src="icons/eth.svg" height="60" width="40" alt="etherem">
-            </div>
-            <div class="block text-center mx-auto">
-               <img src="icons/usdc.svg" height="60" width="60" alt="usd coin">
+            <div class="img px-10 lg:order-1">
+                <img src="images/lifestyle.png" alt="">
             </div>
         </div>
-        <p>Somos una empresa moderna que utiliza la tecnología para mejorar la experiencia de nuestros clientes. La criptomoneda es una de esas tecnologías que pueden facilitar transacciones transfronterizas rápidas, seguras y económicas para nuestros clientes. Es por eso que nos hemos asociado con una de las principales plataformas de cambio de criptomonedas para aceptar pagos en Bitcoin, Ethereum y USD Coin para apartamentos. Creemos que esto facilitará los pagos para nuestros clientes internacionales y también eliminará la necesidad de comisiones por conversión de moneda</p>
     </section>
-    <section class="section bg-light">
-        <h2 class="text-center text-3xl pb-8">Sobre nosotros</h2>
-        <p>Somos una empresa inmobiliaria que se especializa en la venta de apartamentos de lujo en Panamá.</p>
-        <p>Ofrecemos a nuestros clientes un servicio de alta calidad y nos esforzamos por mantener un estándar de excelencia en todos los aspectos de nuestro negocio.</p>
-        <p>Nuestro equipo de jóvenes agentes de bienes raíces profesionales está comprometido a brindarle el mejor servicio posible. Nos esforzamos por mantener un alto nivel de integridad y ética en todo lo que hacemos, y siempre estamos buscando la manera de mejorar nuestros servicios. Nos especializamos en la venta de propiedades en el área de la ciudad de Panama, y estamos seguros de que podemos ayudarle a encontrar la propiedad perfecta para sus necesidades.</p>
-    </section>
-    <section id="contact" class="section bg-secondary">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3">
+
+    <section id="crypto" class="px-10 py-20 section lg:px-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
             <div>
-                <h4 class="text-2xl">PanApts</h4>
-                <h5 class="text-xl">Siguenos:</h5>
-                <div class="flex">
-                    <img src="icons/instagram.svg" width="25" heigth="25" alt="instagram">
-                    <img src="icons/facebook.svg" width="25" height="25" alt="facebook">
-                    <img src="icons/twitter.svg" width="25" height="25" alt="twitter">
-                </div>
+                <h2 class="pb-10">Aceptamos pagos en criptomendas</h2>
+                <p>Somos una empresa moderna que utiliza la tecnología para mejorar la experiencia de nuestros clientes. La criptomoneda es una de esas tecnologías que pueden facilitar transacciones transfronterizas rápidas, seguras y económicas para nuestros clientes. Es por eso que nos hemos asociado con una de las principales plataformas de cambio de criptomonedas para aceptar pagos en Bitcoin, Ethereum y USD Coin para apartamentos. Creemos que esto facilitará los pagos para nuestros clientes internacionales y también eliminará la necesidad de comisiones por conversión de moneda</p>
             </div>
-            <div>
-                <div>
-                    <a href="tel:+50766776677">66776677</a>
-                    <a href="mailto:daltshoul@yahoo.com">daltshoul@yahoo.com</a>
-                </div>
-                <div>
-                    <p>Horarios</p>
-                    <p>Lunes - Viernes: 9am - 7pm</p>
-                    <p>Sábados: 9am - 5pm</p>
-                </div>
-            </div>
-            <div class="w-100 pt-5 lg:pt-0">
-                <iframe
-                    class="img-fluid pb-3"
-                    width="300"
-                    height="200"
-                    frameborder="0" style="border:0"
-                    src="https://maps.google.com/maps?q=1205+S+Dixie+Hwy+%23201,+Coral+Gables,+FL+33146,+USA=&output=embed">
-                </iframe> 
+            <div class="img px-10">
+                <img src="images/crypto.png" alt="">
             </div>
         </div>
     </section>
-    <footer class="p-5 bg-secondaryDark text-white">
-        <div class="flex justify-between">
-            <div>Copyright © 2022 PanApts</div>
-            <div>Powered by torus</div>
+
+
+
+    <footer id="footer" class="bg-gray-100">
+        <div class="mb-16">
+            <div class="container">
+                
+                <div class="row">
+                    <div class="w-full">
+                        <div class="items-end justify-between block mb-8 footer-logo-support md:flex">
+                            <div class="flex items-end footer-logo">
+                                <a class="mt-8" href="index.html"><img src="assets/logo.svg" height="auto" width="35px" alt="Logo"></a>
+
+                                <ul class="flex mt-8 ml-8 footer-social">
+                                    <li><a href="javascript:void(0)"><i class="lni-facebook-filled"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni-twitter-original"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni-instagram-original"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni-linkedin-original"></i></a></li>
+                                </ul>
+                            </div> <!-- footer logo -->
+                            
+                        </div> <!-- footer logo support -->
+                    </div>
+                </div> <!-- row -->
+                
+                <div class="row">
+                    <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/6">
+                        <div class="mb-8 footer-link">
+                            <h6 class="footer-title">Productos</h6>
+                            <ul>
+                                <li><a href="javascript:void(0)">Airbnb</a></li>
+                                <li><a href="javascript:void(0)">Compra</a></li>
+                                <li><a href="javascript:void(0)">Alquiler</a></li>
+
+                            </ul>
+                        </div> <!-- footer link -->
+                    </div>
+                    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                        <div class="mb-8 footer-link">
+                            <h6 class="footer-title">Proyectos</h6>
+                            <ul>
+                                <li><a href="javascript:void(0)">Yoo Panama</a></li>
+                                <li><a href="javascript:void(0)">La Maison</a></li>
+                                <li><a href="javascript:void(0)">Wanders & Yoo</a></li>
+                            </ul>
+                        </div> <!-- footer link -->
+                    </div>
+                    <div class="w-full sm:w-5/12 md:w-1/3 lg:w-1/4">
+                        <div class="mb-8 footer-link">
+                            <h6 class="footer-title">Contacto</h6>
+                            <ul>
+                                <li><a href="tel:+50766776677">+507 66776677</a></li>
+                                <li><a href="mailto:daltshoul@yahoo.com">daltshoul@yahoo.com</a></li>
+                            </ul>
+                        </div> <!-- footer link -->
+                    </div>
+                    <div class="w-full sm:w-7/12 md:w-1/2 lg:w-1/3">
+                        <iframe
+                            class="img-fluid pb-3"
+                            width="400"
+                            height="200"
+                            frameborder="0" style="border:0"
+                            src="https://maps.google.com/maps?q=1205+S+Dixie+Hwy+%23201,+Coral+Gables,+FL+33146,+USA=&output=embed">
+                        </iframe> 
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- footer widget -->
+        
+        <div class="bg-blue-900 footer-copyright">
+            <div class="flex justify-between py-6 text-white container">
+                <div>Copyright © 2022 PanAparts</div>
+                <div>Powered by torus</div>
+            </div>
         </div>
     </footer>
+
+    <!--====== FOOTER PART ENDS ======-->
+
+    <!--====== BACK TO TOP PART START ======-->
+
+    <a class="back-to-top" href="#"><i class="lni-chevron-up"></i></a>
+
+    <!--====== BACK TO TOP PART ENDS ======-->
+    <script>
+        function toggleHidden(id){
+            var element = document.getElementById(id)
+            if(element.classList.contains('hidden')) element.classList.remove('hidden')
+            else element.classList.add('hidden')
+        }
+      </script>
+      <script>
+        window.addEventListener("scroll", (event) => {
+            let nav = document.getElementById('mainNav')
+            if(window.scrollY > 100) nav.classList.add("navbar-shrink")
+            else nav.classList.remove("navbar-shrink")
+        })
+      </script>
+      </script>
+      <script>
+        window.addEventListener("load", (event) => {
+            const links = document.getElementsByClassName("smooth-scroll")
+    
+            for (const link of links) {
+                link.addEventListener("click", clickHandler);
+            }
+    
+            function clickHandler(e) {
+                e.preventDefault();
+                const href = this.getAttribute("href");
+                const offsetTop = document.querySelector(href).offsetTop - 65;
+    
+                scroll({
+                    top: offsetTop,
+                    behavior: "smooth"
+                });
+            }
+        })
+      </script>
+
 </body>
+
 </html>
